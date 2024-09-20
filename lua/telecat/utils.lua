@@ -13,7 +13,7 @@ function Generate_tree(path, prefix)
     if not name then break end
     table.insert(result, prefix .. "├── " .. name)
     if type == "directory" then
-      local subdir_tree = generate_tree(path .. "/" .. name, prefix .. "│   ")
+      local subdir_tree = Generate_tree(path .. "/" .. name, prefix .. "│   ")
       for _, item in ipairs(subdir_tree) do
         table.insert(result, item)
       end
