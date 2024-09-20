@@ -13,9 +13,9 @@ function M.join_files()
   })
 end
 
-function M.setup(opts)
+M.setup = function(opts)
   opts = opts or {}
-  vim.api.nvim_set_keymap('n', '<leader>tjf', '<cmd>lua require("plugins.llmutils").join_files()<CR>', { noremap = true, silent = true })
+  vim.api.nvim_set_keymap('n', '<leader>tcf', '<cmd>lua require("plugins.llmutils").join_files()<CR>', { noremap = true, silent = true })
 end
 
 return M
