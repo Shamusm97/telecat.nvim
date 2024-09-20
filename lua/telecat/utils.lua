@@ -45,7 +45,7 @@ function Join_selected_files(prompt_bufnr)
     table.insert(content, "# Directory Tree")
     table.insert(content, "```")
     table.insert(content, cwd)
-    local tree = generate_tree(cwd)
+    local tree = Generate_tree(cwd)
     for _, line in ipairs(tree) do
       table.insert(content, line)
     end
@@ -54,7 +54,7 @@ function Join_selected_files(prompt_bufnr)
     for i, selection in ipairs(selections) do
       local file_path = selection.path
       if vim.fn.filereadable(file_path) then
-        local filetype = get_filetype(file_path)
+        local filetype = Get_filetype(file_path)
         table.insert(content, "# File: " .. file_path)
         table.insert(content, "```" .. filetype)
         local file_content = vim.fn.readfile(file_path)
